@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 import os.path
 import glob
 
@@ -13,10 +14,10 @@ def convertjpg(jpgfile,outdir,width=700,height=700):
 
 
 
-route = 'Siamese'
-path = "/Users/lvino/Documents/keras/summerproject/data/"+route+'/' #文件夹目录
+route = 'data/BritishShorthair'
+path = os.getcwd()+'/'+route+'/' #文件夹目录
 files= os.listdir(path) #得到文件夹下的所有文件名称
 print(files)
 for file in files: #遍历文件夹
     print(path + file)
-    convertjpg(path+file,"/Users/lvino/Documents/keras/summerproject/data/"+route+"1/")
+    convertjpg(path+file,os.getcwd()+'/'+route+"1/")

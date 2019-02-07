@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 
 
 def load_data(route):
-    path = "/Users/lvino/Documents/keras/summerproject/data/"+route+'/' #文件夹目录
+    path = os.getcwd()+'/'+route+'/' #文件夹目录
     files= os.listdir(path) #得到文件夹下的所有文件名称
     data = []
     for file in files: #遍历文件夹
@@ -22,12 +22,12 @@ def load_data(route):
     return data
 
 
-xianluo_data = load_data('Siamese1')
+xianluo_data = load_data('data/Siamese1')
 xianluo_label = []
 for i in range(len(xianluo_data)):
     xianluo_label.append(0)
 
-yingduan_data = load_data('BritishShorthair1')
+yingduan_data = load_data('data/BritishShorthair1')
 yingduan_label = []
 for i in range(len(yingduan_data)):
     yingduan_label.append(1)
