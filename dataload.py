@@ -100,8 +100,8 @@ model.compile(loss='categorical_crossentropy',
 train_history = model.fit(x=x_train4D_normalized,
                           y=y_trainOne_Hot,
                           validation_split=0.2,
-                          epochs=50,
-                          batch_size=10,
+                          epochs=10,
+                          batch_size=100,
                           verbose=2)
 
 
