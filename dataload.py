@@ -66,7 +66,7 @@ y_testOne_Hot = np_utils.to_categorical(y_test)
 from keras.models import Sequential
 from keras.layers import Dense,Dropout,Flatten,Conv2D,MaxPooling2D
 from keras.optimizers import SGD
-'''
+
 model = Sequential()
 
 model.add(Conv2D(filters=32,
@@ -117,9 +117,9 @@ train_history = model.fit(x=x_train4D_normalized,
                           y=y_trainOne_Hot,
                           validation_split=0.2,
                           epochs=100,
-                          batch_size=50,
+                          batch_size=25,
                           verbose=2)
 
 
 scores = model.evaluate(x_test4D_normalized,y_testOne_Hot)
-print('accuracy = ',scores)'''
+print('accuracy = ',scores)
