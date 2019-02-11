@@ -47,9 +47,9 @@ label = xianluo_label + yingduan_label
 X = np.array(data)
 y = np.array(label)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=30)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=80)
 
-print(X_train.shape[0])
+print(X_train.shape)
 print(y_train.shape)
 
 
@@ -66,7 +66,7 @@ y_testOne_Hot = np_utils.to_categorical(y_test)
 from keras.models import Sequential
 from keras.layers import Dense,Dropout,Flatten,Conv2D,MaxPooling2D
 from keras.optimizers import SGD
-
+'''
 model = Sequential()
 
 model.add(Conv2D(filters=32,
@@ -122,4 +122,4 @@ train_history = model.fit(x=x_train4D_normalized,
 
 
 scores = model.evaluate(x_test4D_normalized,y_testOne_Hot)
-print('accuracy = ',scores)
+print('accuracy = ',scores)'''
