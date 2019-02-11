@@ -22,12 +22,12 @@ def load_data(route):
     return data
 
 
-xianluo_data = load_data('data/Siamese1')
+xianluo_data = load_data('data/n02123045after')
 xianluo_label = []
 for i in range(len(xianluo_data)):
     xianluo_label.append(0)
 
-yingduan_data = load_data('data/BritishShorthair1')
+yingduan_data = load_data('data/n02123394after')
 yingduan_label = []
 for i in range(len(yingduan_data)):
     yingduan_label.append(1)
@@ -46,8 +46,8 @@ print(X_train.shape[0])
 print(y_train)
 
 
-X_train4D = X_train.reshape(X_train.shape[0],700,700,3).astype('float32')
-X_test4D = X_test.reshape(X_test.shape[0],700,700,3).astype('float32')
+X_train4D = X_train.reshape(X_train.shape[0],250,250,3).astype('float32')
+X_test4D = X_test.reshape(X_test.shape[0],250,250,3).astype('float32')
 
 # normalization
 x_train4D_normalized = X_train4D/255
@@ -64,7 +64,7 @@ model = Sequential()
 model.add(Conv2D(filters=16,
                  kernel_size=(5,5),
                  padding="same",
-                 input_shape=(700,700,3),
+                 input_shape=(250,250,3),
                  activation='relu'))
 
 

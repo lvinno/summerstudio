@@ -4,7 +4,7 @@ import os.path
 import glob
 
 
-route = 'data/Siamese1'
+route = 'data/n02123394'
 path = os.getcwd()+'/'+route+'/'
 files= os.listdir(path) #
 
@@ -13,7 +13,7 @@ for file in files: #遍历文件夹
      #设置旧文件名（就是路径+文件名）
      oldname=path+file
      #设置新文件名
-     newname=path+'a'+str(n+1)+'.JPG'
+     newname=path+'a'+str(n+1)+'.JPEG'
      #用os模块中的rename方法对文件改名
      os.rename(oldname,newname)
      print(oldname,'======>',newname)
