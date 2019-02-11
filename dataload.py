@@ -21,6 +21,13 @@ def load_data(route):
              data.append(I)
     return data
 
+import tensorflow
+from keras.backend.tensorflow_backend import set_session 
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+
+sess = tf.Session(config=config)
+set_session(sess)
 
 xianluo_data = load_data('data/n02123045after')
 xianluo_label = []
@@ -43,7 +50,7 @@ y = np.array(label)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=30)
 
 print(X_train.shape[0])
-print(y_train)
+print(y_train.shape)
 
 
 X_train4D = X_train.reshape(X_train.shape[0],250,250,3).astype('float32')
