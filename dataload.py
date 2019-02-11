@@ -117,7 +117,7 @@ train_history = model.fit(x=x_train4D_normalized,
                           y=y_trainOne_Hot,
                           validation_split=0.2,
                           epochs=100,
-                          batch_size=100,
+                          batch_size=50,
                           verbose=2)
 
 
